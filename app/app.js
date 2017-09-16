@@ -6,7 +6,8 @@ angular.module('myApp', [
   'ui.router',
   'myApp.view1',
   'myApp.view2',
-  'myApp.version'
+  'myApp.version',
+  'myApp.account'
 ])
 .config(function($stateProvider) {
   var view1State = {
@@ -23,9 +24,18 @@ angular.module('myApp', [
     controller: 'View2Ctrl'
   };
 
+  var myaccount = {
+    name: 'myaccount',
+    url: '/myaccount',
+    templateUrl: 'myaccount/myaccount.html',
+    controller: 'myaccountCtrl as vm'
+  };
+
   $stateProvider
     .state(view1State)
-    .state(view2State);
+    .state(view2State)
+    .state(myaccount);
+
 })
 
 //   .config(['$routeProvider', function ($routeProvider) {
@@ -52,5 +62,8 @@ angular.module('myApp', [
   },{
     link: '/view2',
     name: 'view2'
+  },{
+    link: '/myaccount',
+    name: 'myaccount'
   }];
 });
