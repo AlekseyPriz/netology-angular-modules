@@ -1,17 +1,24 @@
 'use strict';
 
-angular.module('myApp.account', ['ngRoute'])
+angular.module('myApp.account', [
+  'ngRoute',
+  'ui.router'
+  //'ngMessages'
+])
 
-    .config(['$routeProvider', function ($routeProvider) {
-      $routeProvider.when('/myaccount', {
-        templateUrl: 'myaccount/myaccount.html',
-        controller: 'myaccountCtrl'
-      });
-    }])
 
    .controller('myaccountCtrl', function($scope) {
 
      $scope.master= {};
+
+     $scope.submitForm = function() {
+
+       if ($scope.userForm.$valid) {
+         alert('Вы правильно заполнили форму');
+       }
+
+     };
+
 
      $scope.update = function(user) {
        $scope.master= angular.copy(user);
@@ -23,12 +30,6 @@ angular.module('myApp.account', ['ngRoute'])
 
      $scope.reset();
 
-  //
-  //   var vm = this;
-  //   vm.newPokemon = {};
-  //   vm.addPokemon = function(myPokemon) {
-  //     console.log(myPokemon);
-  //     vm.newPokemon = {};
-  //   };
+
 
   });
