@@ -42,10 +42,14 @@ angular.module('myApp', [
 
 .controller('appCtrl', function ($scope) {
 
-  $scope.view1 = 'view1';
-
-  $scope.view2 = 'view2';
-
-  $scope.myaccount = 'myaccount'
-
+  $scope.menu = [{
+    name: 'view1',
+    text: '-view1-'
+  },{
+    name: 'view2',
+    text: '-view2-'
+  },{
+    name: 'myaccount',
+    text: '-myaccount-'
+  }];
 });
