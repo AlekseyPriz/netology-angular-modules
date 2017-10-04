@@ -43,13 +43,13 @@ angular.module('myApp', [
 .controller('appCtrl', function ($scope) {
 
   $scope.menu = [{
-    name: 'view1',
+    sref: 'view1',
     text: '-view1-'
   },{
-    name: 'view2',
+    sref: 'view2',
     text: '-view2-'
   },{
-    name: 'myaccount',
+    sref: 'myaccount',
     text: '-myaccount-'
   }];
 });
